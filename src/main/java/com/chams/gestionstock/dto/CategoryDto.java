@@ -23,7 +23,7 @@ public class CategoryDto {
 
     private List<ArticleDto> articles;
 
-    public CategoryDto fromEntity(Category category){
+    public static CategoryDto fromEntity(Category category){
         if(category==null){
             return null;
         }
@@ -35,7 +35,7 @@ public class CategoryDto {
                 .build();
     }
 
-    public Category toEntity(CategoryDto category) {
+    public static Category toEntity(CategoryDto category) {
         if(category==null){
             return null;
         }

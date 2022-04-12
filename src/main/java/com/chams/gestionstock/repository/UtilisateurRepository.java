@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import javax.swing.*;
 
 @Repository
-public interface UtilisateurRepository extends JpaRepository<Integer, Utilisateur> {
+public interface UtilisateurRepository extends JpaRepository<Utilisateur,Integer> {
 }
