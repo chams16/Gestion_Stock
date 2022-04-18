@@ -28,7 +28,7 @@ public class CommandClientDto {
     private List<LignCommandeClientDto> ligneCommandeclients;
 
 
-    public CommandClientDto fromEntity(CommandeClient commandeClient){
+    public static CommandClientDto fromEntity(CommandeClient commandeClient){
         if(commandeClient==null){
             return null;
         }
@@ -37,12 +37,12 @@ public class CommandClientDto {
                 .id(commandeClient.getId())
                 .code(commandeClient.getCode())
                 .dateCommande(commandeClient.getDateCommande())
-                .client(client.fromEntity(commandeClient.getClient()))
+                .client(ClientDto.fromEntity(commandeClient.getClient()))
                 .build();
 
     }
 
-    public CommandeClient toEntity(CommandClientDto commandClientDto){
+    public static CommandeClient toEntity(CommandClientDto commandClientDto){
         if(commandClientDto==null){
             return null;
         }

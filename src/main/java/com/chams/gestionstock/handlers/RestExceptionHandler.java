@@ -2,6 +2,7 @@ package com.chams.gestionstock.handlers;
 
 import com.chams.gestionstock.exceptions.EntityNotFoundException;
 import com.chams.gestionstock.exceptions.InvalidEntityException;
+import com.chams.gestionstock.exceptions.InvalidOperationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,6 +22,19 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
                 .httpCode(notFound.value())
                 .message(exception.getMessage())
                 .build(),notFound);
+    }
+
+    @ExceptionHandler(InvalidOperationException.class)
+    public ResponseEntity<ErrorDto> handleException(InvalidOperationException exception, WebRequest webRequest) {
+
+        final HttpStatus notFound = HttpStatus.BAD_REQUEST;
+        final ErrorDto errorDto = ErrorDto.builder()
+                .code(exception.getErrorCode())
+                .httpCode(notFound.value())
+                .message(exception.getMessage())
+                .build();
+
+        return new ResponseEntity<>(errorDto, notFound);
     }
 
     @ExceptionHandler(InvalidEntityException.class)

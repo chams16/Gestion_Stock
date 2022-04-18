@@ -37,7 +37,7 @@ public class LignCommandeClientDto {
                 .build();
     }
 
-    public LigneCommandeclient toEntity(LignCommandeClientDto lignCommandeClientDto){
+    public static LigneCommandeclient toEntity(LignCommandeClientDto lignCommandeClientDto){
         if(lignCommandeClientDto==null){
             return null;
         }

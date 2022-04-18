@@ -1,30 +1,31 @@
 package com.chams.gestionstock.Service.Impl;
 
-import com.chams.gestionstock.Service.CategoryService;
-import com.chams.gestionstock.dto.CategoryDto;
+
+import com.chams.gestionstock.Service.VenteService;
+import com.chams.gestionstock.dto.VentesDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CategoryServiceImpl implements CategoryService {
+public class VenteServiceImpl implements VenteService {
     @Override
-    public CategoryDto save(CategoryDto dto) {
+    public VentesDto save(VentesDto dto) {
         return null;
     }
 
     @Override
-    public CategoryDto findById(Integer id) {
+    public VentesDto findById(Integer id) {
         return null;
     }
 
     @Override
-    public CategoryDto findByCode(String code) {
+    public VentesDto findByCode(String code) {
         return null;
     }
 
     @Override
-    public List<CategoryDto> findAll() {
+    public List<VentesDto> findAll() {
         return null;
     }
 

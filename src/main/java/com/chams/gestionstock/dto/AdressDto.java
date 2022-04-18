@@ -20,7 +20,7 @@ public class AdressDto {
 
     private String pays;
 
-    public AdressDto fromEntity(Adress adress){
+    public static AdressDto fromEntity(Adress adress){
         if(adress==null){
             return null;
         }
